@@ -41,6 +41,6 @@ def register():
         "full_name":data["full_name"],
         "email":data["email"]
     }))
-    response.headers["x-auth-token"] = create_access_token(identity=user.id, additional_claims={"email":data["email"]}, expires_delta=timedelta(days=90))
+    response.headers["Authorization"] = f"Bearer {create_access_token(identity=str(user.id), additional_claims={"email":data["email"]}, expires_delta=timedelta(days=90))}"
 
     return response

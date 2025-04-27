@@ -22,7 +22,7 @@ def login():
         "full_name":user.full_name,
     }))
 
-    access_token = create_access_token(identity=user.id,additional_claims={"email":user.email},expires_delta=timedelta(days=90))
-    response.headers["x-auth-tokne"] = access_token
+    access_token = create_access_token(identity=str(user.id),additional_claims={"email":user.email},expires_delta=timedelta(days=90))
+    response.headers["Authorization"] = f"Bearer {access_token}"
     
     return response
