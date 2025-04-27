@@ -2,7 +2,9 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from routes import user
+from models.models import db,User
 
 load_dotenv()
 
@@ -15,7 +17,9 @@ mysql_db_name = os.getenv("MYSQL_DB_NAME")
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://{mysql_username}:{mysql_password}@localhost/{mysql_db_name}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-db = SQLAlchemy(app)
+db.init_app(app)
+
+migrate = Migrate(app,db)
 
 app.register_blueprint(user.user_routes,url_prefix="/user")
 
