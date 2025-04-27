@@ -10,6 +10,10 @@ flask-restful = "*"
 python-dotenv = "*"
 mysqlclient = "*"
 flask-migrate = "*"
+flask-jwt-extended = "*"
+flask-bcrypt = "*"
+marshmallow = "*"
+flask-marshmallow = "*"
 
 [dev-packages]
 
