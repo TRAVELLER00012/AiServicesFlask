@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from routes import user
+from routes import user, auth
 from models.models import db,User
 
 load_dotenv()
@@ -22,6 +22,7 @@ db.init_app(app)
 migrate = Migrate(app,db)
 
 app.register_blueprint(user.user_routes,url_prefix="/user")
+app.register_blueprint(auth.auth_routes)
 
 @app.route("/")
 def hello_world():
