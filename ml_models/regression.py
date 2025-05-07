@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.preprocessing import StandardScaler
-from model import Model
+from .model import Model
 
 class Linear(Model):
     def __init__(self):
