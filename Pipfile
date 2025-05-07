@@ -14,8 +14,13 @@ flask-jwt-extended = "*"
 flask-bcrypt = "*"
 marshmallow = "*"
 flask-marshmallow = "*"
+pandas = "*"
+numpy = "*"
+matplotlib = "*"
+scikit-learn = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.12"
