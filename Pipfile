@@ -18,6 +18,7 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 scikit-learn = "*"
+joblib = "*"
 
 [dev-packages]
 ipykernel = "*"
