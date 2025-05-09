@@ -4,7 +4,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
-from routes import user, auth, regression
+from routes import user, auth, regression, classification
 from models.models import db
 
 load_dotenv()
@@ -26,6 +26,7 @@ jwt = JWTManager(app)
 app.register_blueprint(user.user_routes,url_prefix="/user")
 app.register_blueprint(auth.auth_routes)
 app.register_blueprint(regression.regression_routes,url_prefix="/regression")
+app.register_blueprint(classification.classification_routes,url_prefix="/classification")
 
 @app.route("/")
 def hello_world():
