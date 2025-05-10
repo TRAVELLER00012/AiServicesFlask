@@ -20,6 +20,7 @@ matplotlib = "*"
 scikit-learn = "*"
 joblib = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [dev-packages]
 ipykernel = "*"
