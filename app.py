@@ -14,8 +14,10 @@ app = Flask(__name__)
 mysql_username = os.getenv("MYSQL_USERNAME")
 mysql_password = os.getenv("MYSQL_PASSWORD")
 mysql_db_name = os.getenv("MYSQL_DB_NAME")
+mysql_db_port = os.getenv("MYSQL_DB_PORT")
+mysql_db_host= os.getenv("MYSQL_DB_HOST")
 
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://{mysql_username}:{mysql_password}@localhost/{mysql_db_name}"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://{mysql_username}:{mysql_password}@{mysql_db_host}:{mysql_db_port}/{mysql_db_name}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_PRIVATE_KEY")
 

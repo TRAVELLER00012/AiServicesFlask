@@ -5,7 +5,7 @@ from flask_jwt_extended import get_jwt_identity
 from models.models import AiModel, db
 
 
-MEDIA_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media" )
+MEDIA_FOLDER = "/tmp"
 os.makedirs(MEDIA_FOLDER, exist_ok=True)
 
 class Model(ABC):
