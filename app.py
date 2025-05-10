@@ -29,7 +29,3 @@ app.register_blueprint(user.user_routes,url_prefix="/user")
 app.register_blueprint(auth.auth_routes)
 app.register_blueprint(regression.regression_routes,url_prefix="/regression")
 app.register_blueprint(classification.classification_routes,url_prefix="/classification")
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
