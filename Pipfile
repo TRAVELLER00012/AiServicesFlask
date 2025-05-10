@@ -19,6 +19,7 @@ numpy = "*"
 matplotlib = "*"
 scikit-learn = "*"
 joblib = "*"
+gunicorn = "*"
 
 [dev-packages]
 ipykernel = "*"
